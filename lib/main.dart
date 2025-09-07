@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_root/screens/detail_screens.dart';
-import 'package:navigation_root/screens/home_screens.dart';
+import 'package:navigate_route/screens/detail_screen.dart';
+import 'package:navigate_route/screens/home_screen.dart';
+import 'package:navigate_route/screens/third_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,14 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Navigation Demo',
+      title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: HomeScreen.routeName,
+      initialRoute: HomeScreen.routeName, // ชื่อ route เริ่มต้น
       routes: {
-        HomeScreen.routeName: (context) => HomeScreen(),
-        DetailScreen.routeName: (context) => DetailScreen()
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        DetailScreen.routeName: (context) => const DetailScreen(),
+        ThirdScreen.routeName: (context) => const ThirdScreen(),
       },
     );
   }
